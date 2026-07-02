@@ -1,0 +1,24 @@
+{
+    "actorSpecification": 1,
+    "name": "gst-business-profile-finder",
+    "title": "GST Business Public Profile Finder",
+    "description": "Extract verified business registration details (Legal Name, Address, Status) from public GST directory aggregators for B2B FinTech use cases.",
+    "version": "0.0",
+    "input": "./input_schema.json",
+    "dockerfile": "../Dockerfile",
+    "minMemoryMbytes": 256,
+    "maxMemoryMbytes": 1024,
+    "pricingModel": "PAY_PER_EVENT",
+    "pricingEvents": [
+        {
+            "eventName": "apify-actor-start",
+            "pricePerEvent": 0.00005,
+            "description": "Charged once when Actor starts"
+        },
+        {
+            "eventName": "profile-extracted",
+            "pricePerEvent": 0.001,
+            "description": "Charged per public GST business profile successfully extracted"
+        }
+    ]
+}

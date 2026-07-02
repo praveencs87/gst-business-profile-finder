@@ -1,0 +1,26 @@
+{
+    "title": "GST Business Public Profile Finder Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "searchUrls": {
+            "title": "Public GST Directory URLs",
+            "type": "array",
+            "description": "List of URLs pointing to public GST aggregator profiles (e.g., knowyourgst.com/gst-number-search/{GSTIN}).",
+            "editor": "requestListSources",
+            "default": [{"url": "https://www.knowyourgst.com/gst-number-search/27AAAAA0000A1Z5"}],
+            "prefill": [{"url": "https://www.knowyourgst.com/gst-number-search/27AAAAA0000A1Z5"}]
+        },
+        "maxProfiles": {
+            "title": "Max Profiles to Extract",
+            "type": "integer",
+            "description": "Maximum number of business profiles to extract.",
+            "editor": "number",
+            "minimum": 1,
+            "maximum": 50000,
+            "default": 1000,
+            "prefill": 1000
+        }
+    },
+    "required": ["searchUrls"]
+}
